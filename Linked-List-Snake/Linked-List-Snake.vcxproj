@@ -138,6 +138,7 @@
     <ClCompile Include="source\Level\LevelModel.cpp" />
     <ClCompile Include="source\Level\LevelService.cpp" />
     <ClCompile Include="source\Level\LevelView.cpp" />
+    <ClCompile Include="source\Player\BodyPart.cpp" />
     <ClCompile Include="source\Player\PlayerService.cpp" />
     <ClCompile Include="source\Player\SnakeController.cpp" />
     <ClCompile Include="source\Time\TimeService.cpp" />
