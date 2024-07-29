@@ -27,5 +27,14 @@ namespace Player {
 		float getRotationAngle();
 		void setDirection(Direction direction);
 		void updatePosition();
+		sf::Vector2i getNextPosition();
+		sf::Vector2i getNextPositionDown();
+		sf::Vector2i getNextPositionUp();
+		sf::Vector2i getNextPositionRight();
+		sf::Vector2i getNextPositionLeft();
+		void setPosition(sf::Vector2i position);
+
+		Direction getDirection();
+		sf::Vector2i getPosition();
 	};
 }
