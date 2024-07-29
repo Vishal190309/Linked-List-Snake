@@ -28,5 +28,7 @@ namespace LinkedList
 
 		sf::Vector2i getNewNodePosition(Node* reference_node);
 		void insertNodeAtTail();
+		void updateNodeDirection(Player::Direction direction_to_set);
+		void updateNodePosition();
 	};
 }

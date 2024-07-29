@@ -1,12 +1,15 @@
 #include "Player/SnakeController.h"
 #include "Global/ServiceLocator.h"
 #include "Level/LevelService.h"
+#include "Event/EventService.h"
+
 
 namespace Player
 {
 	using namespace LinkedList;
 	using namespace Global;
 	using namespace Level;
+	using namespace Event;
 
 	SnakeController::SnakeController()
 	{
@@ -54,11 +57,31 @@ namespace Player
 		single_linked_list->render();
 	}
 
-	void SnakeController::processPlayerInput() { }
+	void SnakeController::processPlayerInput()
+	{
+		EventService* event_service = ServiceLocator::getInstance()->getEventService();
 
-	void SnakeController::updateSnakeDirection() { }
+		if (event_service->pressedUpArrowKey() && current_snake_direction != Direction::DOWN)
+		{
+			current_snake_direction = Direction::UP;
+		}
+		else if (event_service->pressedDownArrowKey() && current_snake_direction != Direction::UP)
+		{
+			current_snake_direction = Direction::DOWN;
+		}
+		else if (event_service->pressedLeftArrowKey() && current_snake_direction != Direction::RIGHT)
+		{
+			current_snake_direction = Direction::LEFT;
+		}
+		else if (event_service->pressedRightArrowKey() && current_snake_direction != Direction::LEFT)
+		{
+			current_snake_direction = Direction::RIGHT;
+		}
+	}
 
-	void SnakeController::moveSnake() { }
+	void SnakeController::updateSnakeDirection() { single_linked_list->updateNodeDirection(current_snake_direction); }
+
+	void SnakeController::moveSnake() { single_linked_list->updateNodePosition(); }
 
 	void SnakeController::processSnakeCollision() { }
 

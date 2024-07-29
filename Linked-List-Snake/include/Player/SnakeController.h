@@ -18,7 +18,7 @@ namespace Player
 		const int initial_snake_length = 10;
 
 		const sf::Vector2i default_position = sf::Vector2i(25, 13);
-		const Direction default_direction = Direction::UP;
+		const Direction default_direction = Direction::RIGHT;
 
 		SnakeState current_snake_state;
 		Direction current_snake_direction;
