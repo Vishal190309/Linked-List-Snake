@@ -13,7 +13,7 @@ namespace LinkedList
 		float node_height;
 
 		sf::Vector2i default_position;
-		Player::Direction default_direction;
+		Player::Direction default_direction = Player::Direction::RIGHT;
 
 		Node* createNode();
 

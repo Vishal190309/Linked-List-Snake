@@ -19,9 +19,11 @@ namespace Player
 
 		const sf::Vector2i default_position = sf::Vector2i(25, 13);
 		const Direction default_direction = Direction::RIGHT;
+		const float movement_frame_duration = 0.1f;
+		float elapsed_duration;
 
 		SnakeState current_snake_state;
-		Direction current_snake_direction;
+		Direction current_snake_direction = Direction::RIGHT;
 		SingleLinkedList* single_linked_list;
 
 		void processPlayerInput();
@@ -39,6 +41,7 @@ namespace Player
 
 		void initialize();
 		void update();
+		void delayedUpdate();
 		void render();
 
 		void spawnSnake();
