@@ -17,11 +17,15 @@ namespace LinkedList
 
 		Node* createNode();
 
+		
+
 	public:
 		SingleLinkedList();
 		~SingleLinkedList();
 
 		void initialize(float width, float height, sf::Vector2i position, Player::Direction direction);
 		void render();
+
+		void createHeadNode();
 	};
 }
