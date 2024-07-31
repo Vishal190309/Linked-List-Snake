@@ -20,7 +20,9 @@ namespace Player
 		const sf::Vector2i default_position = sf::Vector2i(25, 13);
 		const Direction default_direction = Direction::RIGHT;
 		const float movement_frame_duration = 0.1f;
+		const float restart_duration = 2.f;
 		float elapsed_duration;
+		float restart_counter;
 
 		SnakeState current_snake_state;
 		Direction current_snake_direction = Direction::RIGHT;
