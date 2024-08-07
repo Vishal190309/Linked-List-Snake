@@ -44,6 +44,8 @@ namespace Player
 		void reset();
 		void destroy();
 
+		
+
 	public:
 		SnakeController();
 		~SnakeController();
@@ -57,5 +59,6 @@ namespace Player
 		void respawnSnake();
 		void setSnakeState(SnakeState state);
 		SnakeState getSnakeState();
+		std::vector<sf::Vector2i> getCurrentSnakePositionList();
 	};
 }

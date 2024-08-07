@@ -156,5 +156,10 @@ namespace Player
 		delete (single_linked_list);
 	}
 
+	std::vector<sf::Vector2i> SnakeController::getCurrentSnakePositionList()
+	{
+		return single_linked_list->getNodesPositionList();
+	}
+
 
 }
