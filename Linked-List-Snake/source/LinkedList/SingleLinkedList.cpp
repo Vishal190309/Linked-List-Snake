@@ -141,6 +141,11 @@ namespace LinkedList
 		}
 	}
 
+	Node* SingleLinkedList::getHeadNode()
+	{
+		return head_node;
+	}
+
 	std::vector<sf::Vector2i> SingleLinkedList::getNodesPositionList()
 	{
 		std::vector<sf::Vector2i> nodes_position_list;
