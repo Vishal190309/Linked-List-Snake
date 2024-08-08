@@ -53,4 +53,9 @@ namespace Element
 
 		return sf::Vector2f(screen_position_x, screen_position_y);
 	}
+
+	sf::Vector2i Obstacle::getObstaclePosition()
+	{
+		return grid_position;
+	}
 }

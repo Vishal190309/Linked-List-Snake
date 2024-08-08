@@ -140,5 +140,20 @@ namespace LinkedList
 			removeNodeAtHead();
 		}
 	}
+
+	std::vector<sf::Vector2i> SingleLinkedList::getNodesPositionList()
+	{
+		std::vector<sf::Vector2i> nodes_position_list;
+
+		Node* cur_node = head_node;
+
+		while (cur_node != nullptr)
+		{
+			nodes_position_list.push_back(cur_node->body_part.getPosition());
+			cur_node = cur_node->next;
+		}
+
+		return nodes_position_list;
+	}
 }
 
