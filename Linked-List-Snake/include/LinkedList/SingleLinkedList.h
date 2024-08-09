@@ -18,6 +18,7 @@ namespace LinkedList
 
 		float node_width;
 		float node_height;
+		int linked_list_size;
 
 		sf::Vector2i default_position;
 		Player::Direction default_direction = Player::Direction::RIGHT;
@@ -35,6 +36,7 @@ namespace LinkedList
 		void render();
 
 		sf::Vector2i getNewNodePosition(Node* reference_node, Operation operation);
+		void insertNodeAtHead();
 		void insertNodeAtTail();
 		void updateNodeDirection(Player::Direction direction_to_set);
 		void updateNodePosition();
