@@ -39,6 +39,8 @@ namespace Player {
 
 		sf::Vector2i getNextPosition();
 
+		sf::Vector2i getPrevPosition();
+
 
 	};
 }
