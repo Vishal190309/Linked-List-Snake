@@ -92,6 +92,22 @@ namespace Player {
 		}
 	}
 
+	sf::Vector2i BodyPart::getPrevPosition() {
+		switch (direction)
+		{
+		case Direction::UP:
+			return getNextPositionDown();
+		case Direction::DOWN:
+			return getNextPositionUp();
+		case Direction::RIGHT:
+			return getNextPositionLeft();
+		case Direction::LEFT:
+			return getNextPositionRight();
+		default:
+			return grid_position;
+		}
+	}
+
 	sf::Vector2i BodyPart::getNextPositionDown()
 	{
 
