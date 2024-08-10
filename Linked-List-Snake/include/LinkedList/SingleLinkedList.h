@@ -41,6 +41,8 @@ namespace LinkedList
 		void insertNodeAtIndex(int index);
 		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
 		int findMiddleNode();
+		Node* findNodeAtIndex(int index);
+		void removeHalfNodes();
 		void insertNodeAtMiddle();
 		void updateNodeDirection(Player::Direction direction_to_set);
 		void updateNodePosition();
