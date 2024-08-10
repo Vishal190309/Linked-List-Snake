@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/System/Vector2.hpp>
 #include "LinkedList/Node.h"
-#include "LinkedList/Node.h"
+#include "Player/Direction.h"
 
 namespace LinkedList
 {
@@ -29,7 +29,7 @@ namespace LinkedList
 		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
 		int findMiddleNode();
 		Node* findNodeAtIndex(int index);
-		Direction getReverseDirection(Player::Direction reference_direction);
+		Player::Direction getReverseDirection(Player::Direction reference_direction);
 		void reverseNodeDirections();
 		
 	public:
@@ -53,8 +53,9 @@ namespace LinkedList
 		void shiftNodesAfterRemoval(Node* cur_node);
 		void removeNodeAtIndex(int index);
 		void removeNodeAtTail();
+		void removeNodeAtMiddle();
 		void removeAllNodes();
-		Direction reverse();
+		Player::Direction reverse();
 		Node* getHeadNode();
 		std::vector<sf::Vector2i> getNodesPositionList();
 	};
