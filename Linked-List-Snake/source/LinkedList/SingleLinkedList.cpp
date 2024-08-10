@@ -222,6 +222,44 @@ namespace LinkedList
 		linked_list_size--;
 	}
 
+	void SingleLinkedList::shiftNodesAfterRemoval(Node* cur_node) {
+		Node* next_node = cur_node;
+
+		while (next_node != nullptr && next_node->next != nullptr)
+		{
+			next_node->next->body_part.setPosition(next_node->body_part.getPosition());
+			next_node->next->body_part.setDirection(next_node->body_part.getDirection());
+			next_node = next_node->next;
+		}
+
+	}
+
+	void SingleLinkedList::removeNodeAtIndex(int index) {
+
+		if (index < 0 || index >= linked_list_size) return;
+
+		if (index == 0) {
+			removeNodeAtHead();
+			return;
+		}
+
+
+		Node* curr_node = head_node;
+		Node* prev_node = nullptr;
+		int currentIndex = 0;
+		while (curr_node != nullptr && currentIndex <index)
+		{
+			prev_node = curr_node;
+			curr_node = curr_node->next;
+			currentIndex++;
+		}
+
+		prev_node->next = curr_node->next;
+		delete(curr_node);
+		linked_list_size--;
+
+
+	}
 	void SingleLinkedList::removeAllNodes()
 	{
 		if (head_node == nullptr) return;
