@@ -225,7 +225,6 @@ namespace LinkedList
 	void SingleLinkedList::updateNodePosition()
 	{
 		Node* cur_node = head_node;
-		printf("Grid Position: %d\n", head_node->body_part.getPosition().y);
 		while (cur_node != nullptr)
 		{
 			cur_node->body_part.updatePosition();
