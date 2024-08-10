@@ -183,7 +183,7 @@
     <ClInclude Include="include\Level\LevelView.h" />
     <ClInclude Include="include\LinkedListLib\DoubleLinked\DoubleNode.h" />
     <ClInclude Include="include\LinkedListLib\LinkedList.h" />
-    <ClInclude Include="include\LinkedListLib\SingleLinkedList.h" />
+    <ClInclude Include="include\LinkedListLib\SingleLinked\SingleLinkedList.h" />
     <ClInclude Include="include\LinkedListLib\SingleLinked\SingleNode.h" />
     <ClInclude Include="include\Player\BodyPart.h" />
     <ClInclude Include="include\Player\Direction.h" />

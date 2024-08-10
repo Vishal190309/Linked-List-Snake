@@ -212,7 +212,7 @@
     <ClInclude Include="include\UI\UIElement\RectangleShapeView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\LinkedListLib\SingleLinkedList.h">
+    <ClInclude Include="include\LinkedListLib\SingleLinked\SingleLinkedList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Element\ElementData.h">
