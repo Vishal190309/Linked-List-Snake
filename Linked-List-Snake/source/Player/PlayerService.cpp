@@ -46,6 +46,11 @@ namespace Player
 		return snake_controller->getPlayerScore();
 	}
 
+	bool PlayerService::isPlayerDead()
+	{
+		return snake_controller->isSnakeDead();
+	}
+
 	std::vector<sf::Vector2i> PlayerService::getCurrentSnakePositionList()
 	{
 		return snake_controller->getCurrentSnakePositionList();

@@ -266,6 +266,11 @@ namespace Player
 		last_linked_list_operation = LinkedListOperations::NONE;
 	}
 
+	bool SnakeController::isSnakeDead()
+	{
+		return current_snake_state == SnakeState::DEAD;
+	}
+
 	void SnakeController::respawnSnake()
 	{
 		linked_list->removeAllNodes();

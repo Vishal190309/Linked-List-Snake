@@ -95,6 +95,7 @@ namespace Player
 		void respawnSnake();
 		void setSnakeState(SnakeState state);
 		SnakeState getSnakeState();
+		bool isSnakeDead();
 
 		std::vector<sf::Vector2i> getCurrentSnakePositionList();
 		TimeComplexity getTimeComplexity();
