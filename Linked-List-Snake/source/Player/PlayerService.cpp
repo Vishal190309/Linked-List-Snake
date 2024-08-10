@@ -35,14 +35,20 @@ namespace Player
 		snake_controller->render();
 	}
 
-	void PlayerService::spawnPlayer() 
+	void PlayerService::spawnPlayer(Level::LinkedListType linkedlist_type)
 	{
+		snake_controller->createLinkedList(linkedlist_type);
 		snake_controller->spawnSnake();
 	}
 
 	int PlayerService::getPlayerScore()
 	{
 		return snake_controller->getPlayerScore();
+	}
+
+	bool PlayerService::isPlayerDead()
+	{
+		return snake_controller->isSnakeDead();
 	}
 
 	std::vector<sf::Vector2i> PlayerService::getCurrentSnakePositionList()
