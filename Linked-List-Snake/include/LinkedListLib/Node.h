@@ -1,10 +1,13 @@
 #pragma once
 #include "Player/BodyPart.h"
 
-namespace LinkedList {
+namespace LinkedListLib
+{
+	using namespace Player;
+
 	struct Node
 	{
-		Player::BodyPart body_part;
+		BodyPart body_part;
 		Node* next = nullptr;
 	};
 }
