@@ -154,5 +154,78 @@ namespace LinkedListLib
             previous->next = nullptr;
             delete (cur_node);
         }
+
+        void DoubleLinkedList::removeNodeAtMiddle()
+        {
+            if (head_node == nullptr) return; // If the list is empty, there's nothing to remove
+
+            int midIndex = findMiddleNode();  // Use the existing function to find the middle index
+            removeNodeAt(midIndex);           // Use the existing function to remove the node at the found index
+        }
+
+        void DoubleLinkedList::removeNodeAt(int index)
+        {
+            if (index < 0 || index >= linked_list_size) return;
+
+            if (index == 0)
+            {
+                removeNodeAtHead();
+            }
+            else
+            {
+                removeNodeAtIndex(index);
+            }
+        }
+
+        void DoubleLinkedList::removeNodeAtIndex(int index)
+        {
+            linked_list_size--;
+
+            int current_index = 0;
+            Node* cur_node = head_node;
+            Node* prev_node = nullptr;
+
+            while (cur_node != nullptr && current_index < index)
+            {
+                prev_node = cur_node;
+                cur_node = cur_node->next;
+                current_index++;
+            }
+
+            if (prev_node != nullptr)
+            {
+                prev_node->next = cur_node->next;
+            }
+
+            if (cur_node->next != nullptr)
+            {
+                Node* next_node = cur_node->next;
+                static_cast<DoubleNode*>(next_node)->previous = prev_node;
+            }
+
+            shiftNodesAfterRemoval(cur_node);
+            delete(cur_node);
+        }
+
+        void DoubleLinkedList::shiftNodesAfterRemoval(Node* cur_node)
+        {
+            sf::Vector2i previous_node_position = cur_node->body_part.getPosition();
+            Direction previous_node_direction = cur_node->body_part.getDirection();
+            cur_node = cur_node->next;
+
+            while (cur_node != nullptr)
+            {
+                sf::Vector2i temp_node_position = cur_node->body_part.getPosition();
+                Direction temp_node_direction = cur_node->body_part.getDirection();
+
+                cur_node->body_part.setPosition(previous_node_position);
+                cur_node->body_part.setDirection(previous_node_direction);
+
+                cur_node = cur_node->next;
+                previous_node_position = temp_node_position;
+                previous_node_direction = temp_node_direction;
+            }
+        }
 	}
+
 }
