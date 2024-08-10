@@ -10,6 +10,14 @@ namespace LinkedListLib
 			return new DoubleNode();
 		}
 
+        DoubleLinkedList::DoubleLinkedList()
+        {
+        }
+
+        DoubleLinkedList::~DoubleLinkedList()
+        {
+        }
+
         void DoubleLinkedList::insertNodeAtHead()
         {
             linked_list_size++;

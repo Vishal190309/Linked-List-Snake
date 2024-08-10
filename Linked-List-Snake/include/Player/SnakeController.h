@@ -1,8 +1,9 @@
 #pragma once
 #include <SFML/System/Vector2.hpp>
 #include "LinkedListLib/Node.h"
-#include "LinkedListLib/SingleLinked/SingleLinkedList.h"
+#include "LinkedListLib/LinkedList.h"
 #include "Food/FoodType.h"
+#include "Level/LevelConfig.h"
 
 namespace Player
 {
@@ -60,9 +61,9 @@ namespace Player
 		TimeComplexity time_complexity;
 		LinkedListOperations last_linked_list_operation;
 
-		LinkedListLib::SingleLinked::SingleLinkedList* single_linked_list;
+		LinkedListLib::LinkedList* linked_list;
 
-		void createLinkedList();
+		
 		void processPlayerInput();
 		void updateSnakeDirection();
 		void delayedUpdate();
@@ -85,6 +86,8 @@ namespace Player
 		~SnakeController();
 
 		void initialize();
+		void initializeLinkedList();
+		void createLinkedList(Level::LinkedListType level_type);
 		void update();
 		void render();
 
