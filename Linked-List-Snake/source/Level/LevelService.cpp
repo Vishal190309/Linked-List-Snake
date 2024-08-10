@@ -66,6 +66,11 @@ namespace Level
 		Global::ServiceLocator::getInstance()->getFoodService()->startFoodSpawning();
 	}
 
+	void LevelService::setCurrentLevelNumber(Level::LevelNumber level_number)
+	{
+		current_level = level_number;
+	}
+
 	float LevelService::getCellWidth()
 	{
 		return level_controller->getCellWidth();

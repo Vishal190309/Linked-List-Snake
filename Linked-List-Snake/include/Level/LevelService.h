@@ -1,5 +1,5 @@
 #pragma once
-#include "LevelNumber.h"
+#include "LevelConfig.h"
 
 namespace Level {
     class LevelController;
@@ -25,6 +25,8 @@ namespace Level {
         void spawnLevelElements(LevelNumber level_to_load);
         void spawnPlayer();
         void spawnFood();
+
+        void setCurrentLevelNumber(Level::LevelNumber level_number);
 
         float getCellWidth();
         float getCellHeight();

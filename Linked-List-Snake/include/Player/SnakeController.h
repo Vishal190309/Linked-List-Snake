@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/System/Vector2.hpp>
-#include "LinkedList/Node.h"
-#include "LinkedList/SingleLinkedList.h"
+#include "LinkedListLib/Node.h"
+#include "LinkedListLib/SingleLinked/SingleLinkedList.h"
 #include "Food/FoodType.h"
 
 namespace Player
@@ -60,7 +60,7 @@ namespace Player
 		TimeComplexity time_complexity;
 		LinkedListOperations last_linked_list_operation;
 
-		LinkedList::SingleLinkedList* single_linked_list;
+		LinkedListLib::SingleLinked::SingleLinkedList* single_linked_list;
 
 		void createLinkedList();
 		void processPlayerInput();

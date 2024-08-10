@@ -2,7 +2,7 @@
 #include <SFML/System/Vector2.hpp>
 #include <random>
 #include <vector>
-#include "LinkedList/Node.h"
+#include "LinkedListLib/Node.h"
 
 namespace Food
 {
@@ -59,7 +59,7 @@ namespace Food
 
 		void startFoodSpawning();
 		void stopFoodSpawning();
-		bool processFoodCollision(LinkedList::Node* head_node, FoodType& out_food_type);
+		bool processFoodCollision(LinkedListLib::Node* head_node, FoodType& out_food_type);
 		void destroyFood();
 	};
 }

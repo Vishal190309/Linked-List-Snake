@@ -7,7 +7,7 @@
 
 namespace Player
 {
-	using namespace LinkedList;
+	using namespace LinkedListLib;
 	using namespace Global;
 	using namespace Level;
 	using namespace Event;
@@ -29,7 +29,7 @@ namespace Player
 
 	void SnakeController::createLinkedList()
 	{
-		single_linked_list = new SingleLinkedList();
+		single_linked_list = new SingleLinked::SingleLinkedList();
 	}
 
 	void SnakeController::initialize()
