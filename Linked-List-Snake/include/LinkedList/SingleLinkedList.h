@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/System/Vector2.hpp>
 #include "LinkedList/Node.h"
+#include "LinkedList/Node.h"
 
 namespace LinkedList
 {
@@ -25,8 +26,12 @@ namespace LinkedList
 
 		Node* createNode();
 
+		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
+		int findMiddleNode();
+		Node* findNodeAtIndex(int index);
+		Direction getReverseDirection(Player::Direction reference_direction);
+		void reverseNodeDirections();
 		
-
 	public:
 		SingleLinkedList();
 		~SingleLinkedList();
@@ -39,11 +44,8 @@ namespace LinkedList
 		void insertNodeAtHead();
 		void insertNodeAtTail();
 		void insertNodeAtIndex(int index);
-		void shiftNodesAfterInsertion(Node* new_node, Node* cur_node, Node* prev_node);
-		int findMiddleNode();
-		Node* findNodeAtIndex(int index);
-		void removeHalfNodes();
 		void insertNodeAtMiddle();
+		void removeHalfNodes();
 		void updateNodeDirection(Player::Direction direction_to_set);
 		void updateNodePosition();
 		bool processNodeCollision();
@@ -52,6 +54,7 @@ namespace LinkedList
 		void removeNodeAtIndex(int index);
 		void removeNodeAtTail();
 		void removeAllNodes();
+		Direction reverse();
 		Node* getHeadNode();
 		std::vector<sf::Vector2i> getNodesPositionList();
 	};

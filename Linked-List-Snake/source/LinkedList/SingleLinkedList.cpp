@@ -1,5 +1,6 @@
 #include "LinkedList/SingleLinkedList.h"
 #include "Player/BodyPart.h"
+#include "Player//Direction.h"
 #include "Level/LevelView.h"
 
 namespace LinkedList
@@ -323,6 +324,54 @@ namespace LinkedList
 		{
 			removeNodeAtHead();
 		}
+	}
+
+	Direction SingleLinkedList::getReverseDirection(Player::Direction reference_direction) {
+		switch (reference_direction)
+		{
+		case Player::Direction::UP:
+			return Player::Direction::DOWN;
+		case Player::Direction::DOWN:
+			return Player::Direction::UP;
+		case Player::Direction::LEFT:
+			return Player::Direction::RIGHT;
+		case Player::Direction::RIGHT:
+			return Player::Direction::LEFT;
+		default:
+			break;
+		}
+	}
+
+	void SingleLinkedList::reverseNodeDirections()
+	{
+		Node* curr_node = head_node;
+
+		while (curr_node != nullptr)
+		{
+			curr_node->body_part.setDirection(getReverseDirection(curr_node->body_part.getPreviousDirection()));
+			curr_node = curr_node->next;
+		}
+	}
+
+	Direction SingleLinkedList::reverse()
+	{
+		Node* cur_node = head_node;
+		Node* prev_node = nullptr;
+		Node* next_node = nullptr;
+
+		while (cur_node != nullptr)
+		{
+			next_node = cur_node->next;
+			cur_node->next = prev_node;
+
+			prev_node = cur_node;
+			cur_node = next_node;
+		}
+
+		head_node = prev_node;
+
+		reverseNodeDirections();
+		return head_node->body_part.getDirection();
 	}
 
 	Node* SingleLinkedList::getHeadNode()
