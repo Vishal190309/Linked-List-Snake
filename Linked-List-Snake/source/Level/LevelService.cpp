@@ -76,6 +76,11 @@ namespace Level
 		return level_controller->getCellHeight();
 	}
 
+	LevelNumber LevelService::getCurrentLevel()
+	{
+		return current_level;
+	}
+
 	void LevelService::destroy()
 	{
 		delete level_controller;

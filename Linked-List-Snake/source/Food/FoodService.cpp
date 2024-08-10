@@ -3,6 +3,7 @@
 #include "Food/FoodItem.h"
 #include "Level/LevelModel.h"
 #include "Player/PlayerService.h"
+#include "Food/FoodType.h"
 
 namespace Food
 {
@@ -110,7 +111,11 @@ namespace Food
 
 	void FoodService::destroyFood()
 	{
-		if (current_food_item) delete(current_food_item);
+		if (current_food_item) 
+		{ 
+			delete(current_food_item); 
+			current_food_item = nullptr;
+		}
 	}
 
 	void FoodService::updateElapsedDuration()
@@ -131,5 +136,16 @@ namespace Food
 	void FoodService::reset()
 	{
 		elapsed_duration = 0.f;
+	}
+
+	bool FoodService::processFoodCollision(LinkedList::Node* head_node, FoodType& out_food_type)
+	{
+		if (current_food_item && current_food_item->getFoodPosition() == head_node->body_part.getPosition())
+		{
+			out_food_type = current_food_item->getFoodType();
+			return true;
+		}
+
+		return false;
 	}
 }

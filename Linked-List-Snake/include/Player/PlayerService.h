@@ -4,13 +4,15 @@
 namespace Player
 {
 	class SnakeController;
-
+	enum class LinkedListOperations;
+	enum class TimeComplexity;
 	class PlayerService
 	{
 	private:
 		SnakeController* snake_controller;
 
 		void createController();
+		
 		void destroy();
 
 	public:
@@ -22,6 +24,9 @@ namespace Player
 		void render();
 
 		void spawnPlayer();
+		int getPlayerScore();
 		std::vector<sf::Vector2i> getCurrentSnakePositionList();
+		TimeComplexity getTimeComplexity();
+		LinkedListOperations getLastOperation();
 	};
 }
