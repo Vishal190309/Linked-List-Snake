@@ -260,6 +260,26 @@ namespace LinkedList
 
 
 	}
+
+	void SingleLinkedList::removeNodeAtTail() {
+		if (head_node == nullptr) return;
+
+		if (head_node->next == nullptr) {
+			removeNodeAtHead();
+			return;
+		}
+
+		linked_list_size--;
+		Node* curr_node = head_node;
+
+		while (curr_node !=nullptr &&  curr_node->next->next!=nullptr)
+		{
+			curr_node = curr_node->next;
+		}
+
+		delete(curr_node->next);
+		curr_node->next = nullptr;
+	}
 	void SingleLinkedList::removeAllNodes()
 	{
 		if (head_node == nullptr) return;
