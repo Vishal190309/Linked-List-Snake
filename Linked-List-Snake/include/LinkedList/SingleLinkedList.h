@@ -55,6 +55,7 @@ namespace LinkedList
 		void removeNodeAtTail();
 		void removeNodeAtMiddle();
 		void removeAllNodes();
+		int getLinkedListSize();
 		Player::Direction reverse();
 		Node* getHeadNode();
 		std::vector<sf::Vector2i> getNodesPositionList();

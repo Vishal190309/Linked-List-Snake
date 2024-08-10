@@ -342,6 +342,11 @@ namespace LinkedList
 		}
 	}
 
+	int SingleLinkedList::getLinkedListSize()
+	{
+		return linked_list_size;
+	}
+
 	Direction SingleLinkedList::getReverseDirection(Player::Direction reference_direction) {
 		switch (reference_direction)
 		{

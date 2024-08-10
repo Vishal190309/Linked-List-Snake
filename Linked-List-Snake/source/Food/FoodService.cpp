@@ -97,8 +97,7 @@ namespace Food
 	{
 		std::uniform_int_distribution<int> distribution(0, FoodItem::number_of_foods - 1);
 
-		//return static_cast<FoodType>(distribution(random_engine));
-		return FoodType::MANGO;
+		return static_cast<FoodType>(distribution(random_engine));
 	}
 
 	bool FoodService::isValidPosition(std::vector<sf::Vector2i> position_data, sf::Vector2i food_position)
